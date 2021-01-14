@@ -1,7 +1,7 @@
-package com.mashernandez.java.test.controllers;
+package com.miguelashdez.java.test.controllers;
 
-import com.mashernandez.java.test.models.entities.User;
-import com.mashernandez.java.test.services.UserService;
+import com.miguelashdez.java.test.models.entities.User;
+import com.miguelashdez.java.test.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,9 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("/api/users")
@@ -63,7 +61,7 @@ public class UserController {
     private ResponseEntity<?> validate(BindingResult result) {
         Map<String, String> errors = new HashMap<>();
         result.getFieldErrors().forEach(e -> {
-            errors.put("Error", e.getDefaultMessage());
+            errors.put(e.getField(), e.getDefaultMessage());
         });
         return ResponseEntity.badRequest().body(errors);
     }

@@ -1,6 +1,6 @@
-package com.mashernandez.java.test.services;
+package com.miguelashdez.java.test.services;
 
-import com.mashernandez.java.test.models.entities.User;
+import com.miguelashdez.java.test.models.entities.User;
 
 import java.util.List;
 

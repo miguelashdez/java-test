@@ -1,4 +1,4 @@
-package com.mashernandez.java.test.models.entities;
+package com.miguelashdez.java.test.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -6,15 +6,14 @@ import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Entity
 @Table(name = "users")
-public class User implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,14 +27,15 @@ public class User implements Serializable {
     @Email(message = "Field 'Email' must have a correct format.")
     private String email;
 
-    @Pattern(regexp = "[0-9]{2}[A-Z][a-z]*")
+    // Correct Passwords: 12Miguel, 07Angel. Incorrect Passwords: 12345, a1234.
+    @Pattern(regexp = "[0-9]{2}[A-Z][a-z]*", message = "Field 'Password' must have a correct format.")
     @NotEmpty(message = "Field 'Password' is required.")
     private String password;
 
     @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_phone")
-    private Phone phones;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_user")
+    private List<Phone> phones;
 
     @Temporal(TemporalType.DATE)
     private Date created;
@@ -53,6 +53,7 @@ public class User implements Serializable {
     private Integer isActive;
 
     public User() {
+        this.phones = new ArrayList<>();
         this.created = new Date();
         this.lastLogin = new Date();
         this.token = UUID.randomUUID().toString();
@@ -91,11 +92,11 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Phone getPhones() {
+    public List<Phone> getPhones() {
         return phones;
     }
 
-    public void setPhones(Phone phones) {
+    public void setPhones(List<Phone> phones) {
         this.phones = phones;
     }
 
@@ -137,22 +138,6 @@ public class User implements Serializable {
 
     public void setIsActive(Integer isActive) {
         this.isActive = isActive;
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "idUser=" + idUser +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", phones=" + phones +
-                ", created=" + created +
-                ", modified=" + modified +
-                ", lastLogin=" + lastLogin +
-                ", token='" + token + '\'' +
-                ", isActive=" + isActive +
-                '}';
     }
 
 }

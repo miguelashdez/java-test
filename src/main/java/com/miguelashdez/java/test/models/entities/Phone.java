@@ -1,13 +1,10 @@
-package com.mashernandez.java.test.models.entities;
+package com.miguelashdez.java.test.models.entities;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Table(name = "phones")
-public class Phone implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class Phone {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -55,16 +52,6 @@ public class Phone implements Serializable {
 
     public void setCountryCode(Integer countryCode) {
         this.countryCode = countryCode;
-    }
-
-    @Override
-    public String toString() {
-        return "Phone{" +
-                "idPhone=" + idPhone +
-                ", number='" + number + '\'' +
-                ", cityCode=" + cityCode +
-                ", countryCode=" + countryCode +
-                '}';
     }
 
 }

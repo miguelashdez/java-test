@@ -1,7 +1,7 @@
-package com.mashernandez.java.test.services;
+package com.miguelashdez.java.test.services;
 
-import com.mashernandez.java.test.models.entities.User;
-import com.mashernandez.java.test.models.repositories.UserRepository;
+import com.miguelashdez.java.test.models.entities.User;
+import com.miguelashdez.java.test.models.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

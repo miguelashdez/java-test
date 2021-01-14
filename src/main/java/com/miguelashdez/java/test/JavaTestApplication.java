@@ -1,4 +1,4 @@
-package com.mashernandez.java.test;
+package com.miguelashdez.java.test;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
