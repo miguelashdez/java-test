@@ -3,10 +3,10 @@
 ## Ruta de los servicios:
 
 ```
-##Get
+Get
 http://localhost:8080/api/users
 
-######JSON de respuesta inicial:
+JSON de respuesta inicial:
 
 [
     {
@@ -61,20 +61,20 @@ http://localhost:8080/api/users
     }
 ]
 
-##Post
+Post
 http://localhost:8080/api/users
 
-##Put
+Put
 http://localhost:8080/api/users/id
 
-##Put (eliminar ya que es una baja lógica)
+Put (eliminar ya que es una baja lógica)
 http://localhost:8080/api/users/delete/id
 ```
 
 ## Se pueden utilizar los siguientes datos para crear un nuevo usuario
 
 ```
-######----- JSON de entrada, ejemplo 1 -----
+----- JSON de entrada, ejemplo 1 -----
 {
     "name": "User1",
     "email": "user1@domain.com",
@@ -88,7 +88,7 @@ http://localhost:8080/api/users/delete/id
     ]
 }
 
-######----- Respuesta, ejemplo 1 -----
+----- Respuesta, ejemplo 1 -----
 
 {
     "idUser": 3,
@@ -110,7 +110,7 @@ http://localhost:8080/api/users/delete/id
     "isActive": 1
 }
 
-######----- JSON de entrada, ejemplo 2 -----
+----- JSON de entrada, ejemplo 2 -----
 
 {
     "name": "User2",
@@ -130,7 +130,7 @@ http://localhost:8080/api/users/delete/id
     ]
 }
 
-######----- Respuesta, ejemplo 2 -----
+----- Respuesta, ejemplo 2 -----
 
 {
     "idUser": 4,
@@ -162,7 +162,7 @@ http://localhost:8080/api/users/delete/id
 ## Se pueden utilizar los siguientes datos para editar un nuevo usuario
 
 ```
-######----- JSON de entrada -----
+----- JSON de entrada -----
 
 {
     "name": "Update",
@@ -178,7 +178,7 @@ http://localhost:8080/api/users/delete/id
     ]
 }
 
-######----- Respuesta -----
+----- Respuesta -----
 {
     "idUser": 1,
     "name": "Update",
@@ -203,7 +203,7 @@ http://localhost:8080/api/users/delete/id
 ## Se pueden utilizar los siguientes datos para eliminar un nuevo usuario (baja lógica)
 
 ```
-######----- Respuesta -----
+----- Respuesta -----
 
 {
     "idUser": 1,
@@ -229,7 +229,7 @@ http://localhost:8080/api/users/delete/id
 ## Formato de mensajes de error
 
 ```
-######----- Ejemplo 1 -----
+----- Ejemplo 1 -----
 
 {
     "password": "Field 'Password' is required.",
@@ -237,7 +237,7 @@ http://localhost:8080/api/users/delete/id
     "email": "Field 'Email' is required."
 }
 
-######----- Ejemplo 2 -----
+----- Ejemplo 2 -----
 
 {
     "password": "Field 'Password' must have a correct format.",
