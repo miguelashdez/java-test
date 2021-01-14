@@ -21,14 +21,14 @@ class JavaTestApplicationTests {
     @Test
     void testCreateUserStatusCodeValue201() {
         User user = new User("Angel", "angel@mail.com", "01Angel");
-        ResponseEntity<String> responseEntity = this.restTemplate.postForEntity("http://localhost:" + port + "/api/users", user, String.class);
+        ResponseEntity<User> responseEntity = this.restTemplate.postForEntity("http://localhost:" + port + "/api/users", user, User.class);
         Assertions.assertEquals(201, responseEntity.getStatusCodeValue());
     }
 
     @Test
     void testCreateUserStatusCodeValue400() {
         User user = new User();
-        ResponseEntity<String> responseEntity = this.restTemplate.postForEntity("http://localhost:" + port + "/api/users", user, String.class);
+        ResponseEntity<User> responseEntity = this.restTemplate.postForEntity("http://localhost:" + port + "/api/users", user, User.class);
         Assertions.assertEquals(400, responseEntity.getStatusCodeValue());
     }
 
