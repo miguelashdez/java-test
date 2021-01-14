@@ -71,7 +71,7 @@ Put (eliminar ya que es una baja lógica)
 http://localhost:8080/api/users/delete/id
 ```
 
-## Se pueden utilizar los siguientes datos para crear un nuevo usuario
+## Se pueden utilizar los siguientes datos para crear un usuario
 
 ```
 ----- JSON de entrada, ejemplo 1 -----
@@ -159,7 +159,7 @@ http://localhost:8080/api/users/delete/id
 }
 ```
 
-## Se pueden utilizar los siguientes datos para editar un nuevo usuario
+## Se pueden utilizar los siguientes datos para editar un usuario
 
 ```
 ----- JSON de entrada -----
@@ -200,7 +200,7 @@ http://localhost:8080/api/users/delete/id
 }
 ```
 
-## Se pueden utilizar los siguientes datos para eliminar un nuevo usuario (baja lógica)
+## Se pueden utilizar los siguientes datos para eliminar un usuario (baja lógica)
 
 ```
 ----- Respuesta -----
