@@ -60,6 +60,12 @@ public class User {
         this.isActive = 1;
     }
 
+    public User(@NotEmpty(message = "Field 'Name' is required.") String name, @NotEmpty(message = "Field 'Email' is required.") @Email(message = "Field 'Email' must have a correct format.") String email, @Pattern(regexp = "[0-9]{2}[A-Z][a-z]*", message = "Field 'Password' must have a correct format.") @NotEmpty(message = "Field 'Password' is required.") String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+    }
+
     public Long getIdUser() {
         return idUser;
     }
