@@ -1,3 +1,17 @@
 # Evaluación Java Nisum
 
-El archivo con los scripts de BD se encuentra en src/main/resources -> data.sql
+## Ruta de los servicios:
+
+```
+Get
+http://localhost:8080/api/users
+
+Post
+http://localhost:8080/api/users
+
+Put
+http://localhost:8080/api/users/id
+
+Put (eliminar ya que es una baja lógica)
+http://localhost:8080/api/users/delete/id
+```
