@@ -32,4 +32,10 @@ class JavaTestApplicationTests {
         Assertions.assertEquals(400, responseEntity.getStatusCodeValue());
     }
 
+    @Test
+    void testReadUsersStatusCodeValue200() {
+        ResponseEntity<User[]> responseEntity = this.restTemplate.getForEntity("http://localhost:" + port + "/api/users", User[].class);
+        Assertions.assertEquals(200, responseEntity.getStatusCodeValue());
+    }
+
 }
