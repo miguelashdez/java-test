@@ -49,7 +49,7 @@ public class UserController {
     }
 
     @PutMapping("/delete/{id}")
-    public ResponseEntity<?> delete(@RequestBody User user, @PathVariable Long id) {
+    public ResponseEntity<?> delete(@PathVariable Long id) {
         User currentUser = this.service.findById(id);
         if (currentUser == null) {
             return ResponseEntity.noContent().build();
