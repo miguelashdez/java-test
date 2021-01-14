@@ -54,4 +54,14 @@ public class Phone {
         this.countryCode = countryCode;
     }
 
+    @Override
+    public String toString() {
+        return "Phone{" +
+                "idPhone=" + idPhone +
+                ", number='" + number + '\'' +
+                ", cityCode=" + cityCode +
+                ", countryCode=" + countryCode +
+                '}';
+    }
+
 }

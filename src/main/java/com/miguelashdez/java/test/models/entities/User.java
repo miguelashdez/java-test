@@ -146,4 +146,20 @@ public class User {
         this.isActive = isActive;
     }
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "idUser=" + idUser +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", phones=" + phones +
+                ", created=" + created +
+                ", modified=" + modified +
+                ", lastLogin=" + lastLogin +
+                ", token='" + token + '\'' +
+                ", isActive=" + isActive +
+                '}';
+    }
+
 }
